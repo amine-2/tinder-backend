@@ -1,4 +1,4 @@
-const PORT = 8000
+const port = process.env.PORT || 3000;
 const express = require('express')
 const { MongoClient } = require('mongodb')
 const { v4: uuidv4 } = require('uuid')
@@ -266,4 +266,7 @@ app.get('/messages', async (req, res) => {
 
 
 
-app.listen(PORT, () => console.log('server running on PORT' + PORT))
+
+app.listen(port, () => {
+    console.log(`App listening at port ${port}`);
+});
